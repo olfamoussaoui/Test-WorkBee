@@ -6,11 +6,13 @@ import { AppMaterialModule } from './app-material/app-material.module';
 import 'hammerjs';
 import { MainNavComponent } from './shared/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MembersListComponent } from './components/members-list/members-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainNavComponent,
+    MembersListComponent
   ],
   imports: [
     BrowserModule,
