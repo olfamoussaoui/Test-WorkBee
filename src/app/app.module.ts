@@ -7,6 +7,10 @@ import 'hammerjs';
 import { MainNavComponent } from './shared/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MembersListComponent } from './components/members-list/members-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
+import { TeamService } from './services/team.service';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,9 +22,14 @@ import { MembersListComponent } from './components/members-list/members-list.com
     BrowserModule,
     BrowserAnimationsModule,
     AppMaterialModule,
-    LayoutModule
+    LayoutModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    TeamService,
+    {provide: 'BaseURL', useValue: baseURL}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
